@@ -1,15 +1,26 @@
 var min = 0;
-var max = 420;
+var maxX = 920;
+var maxy = 420;
 var ag = document.getElementById("animalGame");
 var lienzo = ag.getContext("2d");
 
 var map  = {   //no se puede agregar un objeto cow a la definición en JSON
-    url: "./img/tile.png",   // el objeto se agrega despues
+    url: "./img/tile2.png",   // el objeto se agrega despues
     estado: false
 };
 
 var cow = {   //no se puede agregar un objeto cow a la definición en JSON
     url: "./img/vaca.png",   // el objeto se agrega despues
+    estado: false
+};
+
+var pig = {   //no se puede agregar un objeto cow a la definición en JSON
+    url: "./img/cerdo.png",   // el objeto se agrega despues
+    estado: false
+};
+
+var chicken = {   //no se puede agregar un objeto cow a la definición en JSON
+    url: "./img/pollo.png",   // el objeto se agrega despues
     estado: false
 };
 
@@ -19,16 +30,18 @@ map.image.addEventListener("load", drawMap);
 
 cow.object = new Image();     // we create var object
 cow.object.src = cow.url;
-cow.object.addEventListener("load", drawCows)
+cow.object.addEventListener("load", drawCows);
 
-/*var chicken = new Image();
-chicken.src = "./img/pollo.png";
-chicken.addEventListener("load", drawChickens)
+chicken.image = new Image();
+chicken.image.src = chicken.url;
+chicken.image.addEventListener("load", drawChickens);
 
-var pig = new Image();
-pig.src = "./img/cerdo.png";
-pig.addEventListener("load", drawPig)*/
+pig.image = new Image();
+pig.image.src = pig.url;
+pig.image.addEventListener("load", drawPigs);
+
+var quantityCows = aleatorio(0,70);
+var quantityPigs = aleatorio(0,70);
 
 
-var cantidad = aleatorio(0,50);
-document.write(cantidad +" Cows");
+
